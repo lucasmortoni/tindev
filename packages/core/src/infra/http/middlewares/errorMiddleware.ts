@@ -1,5 +1,6 @@
-import { AppError } from '@shared/errors/AppError'
 import { NextFunction, Request, Response } from 'express'
+import { AppError } from '@shared/errors/AppError'
+import { ValidationError } from 'yup'
 
 export const errorMiddleware = (
   err: Error,
@@ -12,8 +13,14 @@ export const errorMiddleware = (
       message: err.statusMessage
     })
   }
+
+  if (err instanceof ValidationError) {
+    return res.status(400).json({
+      message: err.errors
+    })
+  }
+
   return res.status(500).json({
-    status: 'error',
     message: `Internal Server Error - ${err.message}`
   })
 }

@@ -1,6 +1,6 @@
 export type UserProps = {
   id?: string
-  avatar_url: string
+  avatar_url?: string
   name: string
   surname: string
   username: string
