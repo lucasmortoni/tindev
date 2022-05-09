@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { RegisterUser } from '../useCases/RegisterUser'
+import { RegisterUser } from '../usecases/RegisterUser'
 import * as yup from 'yup'
 
 export class RegisterUserController {

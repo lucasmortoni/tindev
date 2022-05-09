@@ -1,7 +1,7 @@
-import { RegisterUserController } from '@modules/users/controllers/RegisterUserController'
-import { PrismaUsersRepository } from '@modules/users/repositories/prisma/PrismaUsersRepository'
-import { RegisterUser } from '@modules/users/useCases/RegisterUser'
 import { Request, Response } from 'express'
+import { PrismaUsersRepository } from '@modules/users/repositories/prisma/PrismaUsersRepository'
+import { RegisterUser } from '@modules/users/usecases/RegisterUser'
+import { RegisterUserController } from '@modules/users/controllers/RegisterUserController'
 
 export const registerUserFactory = (req: Request, res: Response) => {
   const prismaRepo = new PrismaUsersRepository()
