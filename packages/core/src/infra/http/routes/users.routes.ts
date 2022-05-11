@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import { registerUserFactory } from '../factories/controllers/RegisterUserFactory'
-import { retrieveUserFactory } from '../factories/controllers/RetrieveUserFactory'
+import { registerUserFactory } from '@infra/http/factories/controllers/RegisterUserFactory'
+import { retrieveUserFactory } from '@infra/http/factories/controllers/RetrieveUserFactory'
 
 const usersRouter = Router()
 

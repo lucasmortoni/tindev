@@ -1,6 +1,6 @@
 import { prisma } from '@infra/prisma/client'
-import { User, UserProps } from '@modules/users/domain/user'
-import { UsersRepository } from '../UsersRepository'
+import { User, UserProps } from '@accounts/domain/user'
+import { UsersRepository } from '@accounts/repositories/UsersRepository'
 
 export class PrismaUsersRepository implements UsersRepository {
   async create(user: User): Promise<void> {

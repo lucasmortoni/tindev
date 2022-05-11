@@ -1,5 +1,5 @@
 import { User, UserProps } from '../domain/user'
-import { UsersRepository } from '../repositories/UsersRepository'
+import { UsersRepository } from '@accounts/repositories/UsersRepository'
 import { AppError } from '@shared/errors/AppError'
 
 export class RegisterUser {

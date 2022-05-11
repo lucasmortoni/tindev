@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import { PrismaUsersRepository } from '@modules/users/repositories/prisma/PrismaUsersRepository'
-import { RetrieveUser } from '@modules/users/usecases/RetrieveUser'
-import { RetrieveUserController } from '@modules/users/controllers/RetrieveUserController'
+import { PrismaUsersRepository } from '@accounts/repositories/prisma/PrismaUsersRepository'
+import { RetrieveUser } from '@accounts/usecases/RetrieveUser'
+import { RetrieveUserController } from '@accounts/controllers/RetrieveUserController'
 
 export const retrieveUserFactory = (req: Request, res: Response) => {
   const prismaRepo = new PrismaUsersRepository()

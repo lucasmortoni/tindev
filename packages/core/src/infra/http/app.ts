@@ -1,11 +1,11 @@
 import express from 'express'
 import 'express-async-errors'
-import { router } from './routes'
+import { router } from '@infra/http/routes'
 
 import { graphqlHTTP } from 'express-graphql'
-import schema from '../graphql'
+import schema from '@infra/graphql'
 
-import { errorMiddleware } from './middlewares/errorMiddleware'
+import { errorMiddleware } from '@infra/http/middlewares/errorMiddleware'
 
 const app = express()
 

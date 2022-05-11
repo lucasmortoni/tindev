@@ -1,5 +1,5 @@
 import { app } from './app'
-import { prisma, prismaConnect } from '../prisma/client'
+import { prisma, prismaConnect } from '@infra/prisma/client'
 
 app.get('/', (req, res) => {
   return res.json({ msg: 'hello world' })
