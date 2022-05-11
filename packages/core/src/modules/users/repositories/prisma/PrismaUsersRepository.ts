@@ -1,5 +1,5 @@
 import { prisma } from '@infra/prisma/client'
-import { User } from '@modules/users/domain/user'
+import { User, UserProps } from '@modules/users/domain/user'
 import { UsersRepository } from '../UsersRepository'
 
 export class PrismaUsersRepository implements UsersRepository {
@@ -15,5 +15,18 @@ export class PrismaUsersRepository implements UsersRepository {
   async existsUsername(username: string): Promise<boolean> {
     const result = await prisma.user.findUnique({ where: { username } })
     return !!result
+  }
+
+  async findByUsername(username: string): Promise<User | null> {
+    const user = (await prisma.user.findUnique({
+      where: { username }
+    })) as UserProps
+
+    if (!user) {
+      return null
+    }
+    const result = User.create(user)
+
+    return result
   }
 }
