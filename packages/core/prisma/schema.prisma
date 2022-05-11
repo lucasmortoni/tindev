@@ -24,6 +24,7 @@ model User {
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
 
+  matches Match[]
   @@map("users")
 }
 
@@ -38,5 +39,18 @@ model Company {
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
 
+  matches Match[]
   @@map("companies")
+}
+
+model Match {
+  id            String  @id @default(uuid())
+  user_id       String
+  user_liked    Boolean
+  user          User    @relation(fields: [user_id], references: [id])
+  company_id    String
+  company_liked Boolean
+  company       Company @relation(fields: [company_id], references: [id])
+
+  @@map("matches")
 }
