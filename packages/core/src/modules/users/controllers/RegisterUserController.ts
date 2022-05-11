@@ -10,8 +10,12 @@ export class RegisterUserController {
       name: yup.string().required(),
       surname: yup.string().required(),
       username: yup.string().required(),
-      email: yup.string().required().email(),
-      password: yup.string().required()
+      email: yup.string().email().required(),
+      password: yup
+        .string()
+        .min(8)
+        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
+        .required()
     })
     const data = req.body
 
