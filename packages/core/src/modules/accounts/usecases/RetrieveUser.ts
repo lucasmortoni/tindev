@@ -1,4 +1,3 @@
-// import { User } from '../domain/user'
 import { UsersRepository } from '@accounts/repositories/UsersRepository'
 import { AppError } from '@shared/errors/AppError'
 
