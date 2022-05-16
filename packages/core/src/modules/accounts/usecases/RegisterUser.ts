@@ -1,4 +1,4 @@
-import { User, UserProps } from '../domain/user'
+import { User, UserProps } from '@accounts/domain/user'
 import { UsersRepository } from '@accounts/repositories/UsersRepository'
 import { AppError } from '@shared/errors/AppError'
 
