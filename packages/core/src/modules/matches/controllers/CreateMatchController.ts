@@ -9,9 +9,7 @@ export class CreateMatchController {
   async handle(req: Request, res: Response) {
     const dataSchema = yup.object().shape({
       user_id: yup.string().required(),
-      user_liked: yup.boolean(),
-      company_id: yup.string().required(),
-      company_liked: yup.boolean()
+      company_id: yup.string().required()
     })
     const data = req.body as MatchProps
 
