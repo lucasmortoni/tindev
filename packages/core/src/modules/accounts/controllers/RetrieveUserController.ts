@@ -1,8 +1,5 @@
 import { Request, Response } from 'express'
-import {
-  RetrieveUser,
-  RetrieveRequestProps
-} from '@accounts/usecases/RetrieveUser'
+import { RetrieveUser, RetrieveRequestProps } from '@accounts/usecases/RetrieveUser'
 
 export class RetrieveUserController {
   constructor(private retrieveUser: RetrieveUser) {}
