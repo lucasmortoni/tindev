@@ -46,10 +46,10 @@ model Company {
 model Match {
   id            String  @id @default(uuid())
   user_id       String
-  user_liked    Boolean
+  user_liked    Boolean @default(false)
   user          User    @relation(fields: [user_id], references: [id])
   company_id    String
-  company_liked Boolean
+  company_liked Boolean @default(false)
   company       Company @relation(fields: [company_id], references: [id])
 
   @@map("matches")

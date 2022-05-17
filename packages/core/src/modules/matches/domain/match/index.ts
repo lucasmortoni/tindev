@@ -1,9 +1,9 @@
 export type MatchProps = {
   id?: string
   user_id: string
-  user_liked: boolean
+  user_liked?: boolean
   company_id: string
-  company_liked: boolean
+  company_liked?: boolean
 }
 
 export class Match {

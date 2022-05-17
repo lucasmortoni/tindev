@@ -5,6 +5,7 @@ import { UserProps } from '@accounts/domain/user'
 
 export class RegisterUserController {
   constructor(private registerUser: RegisterUser) {}
+
   async handle(req: Request, res: Response) {
     const dataSchema = yup.object().shape({
       avatar_url: yup.string(),
