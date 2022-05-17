@@ -18,9 +18,7 @@ export class PrismaUsersRepository implements UsersRepository {
   }
 
   async findByUsername(username: string): Promise<User | null> {
-    const user = (await prisma.user.findUnique({
-      where: { username }
-    })) as UserProps
+    const user = (await prisma.user.findUnique({ where: { username } })) as UserProps
 
     if (!user) {
       return null
