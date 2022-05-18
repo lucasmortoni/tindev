@@ -23,4 +23,8 @@ export class PrismaMatchesRepository implements MatchesRepository {
 
     return match
   }
+
+  async update(match: Match): Promise<void> {
+    await prisma.match.update({ where: { id: match.props.id }, data: match.props })
+  }
 }
