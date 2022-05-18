@@ -7,6 +7,11 @@ export class PrismaCompaniesRepository implements CompaniesRepository {
     await prisma.company.create({ data: company.props })
   }
 
+  async exists(id: string): Promise<boolean> {
+    const result = await prisma.company.findUnique({ where: { id } })
+    return !!result
+  }
+
   async existsEmail(email: string): Promise<boolean> {
     const result = await prisma.company.findUnique({ where: { email } })
     return !!result

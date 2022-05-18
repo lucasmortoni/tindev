@@ -27,4 +27,9 @@ export class PrismaMatchesRepository implements MatchesRepository {
   async update(match: Match): Promise<void> {
     await prisma.match.update({ where: { id: match.props.id }, data: match.props })
   }
+
+  async itsAMatch(id: string): Promise<boolean> {
+    const result = await prisma.match.findUnique({ where: { id } })
+    return !!(result?.user_liked && result?.company_liked)
+  }
 }
